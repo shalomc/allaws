@@ -13,4 +13,15 @@ Now all you have to do is add `all` before your command, and make it
 
 `allaws cloudformation list-stacks --query "Stacks[*]."StackName"`
 
+## Installation on Windows
+Just put the allaws.bat file somewhere in your path.
 
+## Installation on Linux
+Just put the allaws.bat file somewhere in your path. /usr/local/bin worked for me. 
+
+Then add this to your .bashrc
+`alias allaws="allaws.sh`
+
+## Caveats
+This command uses the ec2 describe-regions command. While this is good enough for most purposes, it is not always accurate, as some AWS services are not available in all regions. 
+Still, at most you will get an empty response :/
